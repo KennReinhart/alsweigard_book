@@ -14,7 +14,7 @@ def main():
     print("Welcome to the guessing game! Try to guess the {}-digit in {} tries".format(num_digits, max_guesses))
 
     while True:
-        secretNum = getSecretNum()
+        secretNum = getSecretNum() #'123'
         print('I have thought up a number')
 
         numGuesses = 1
