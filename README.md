@@ -33,3 +33,29 @@ This is where i answers the given questions from the projects
    h. What happens if you comment out numGuesses += 1 on line 44?
    
         We will stuck until we guess the right digits
+
+2. Birthday Paradox, math simulation
+   
+   a. How are birthdays represented in this program?
+   
+         We define birthdays 1st January of 1994 in this program
+   
+   b. How could you remove the maximum limit of 100 birthdays the pro
+gram generates?
+
+         in the logic (for i in range(numbers)), numbers could be set 100 or less and more
+
+   c. What error message do you get if you delete or comment out numBDays = 
+int(response)
+
+         numBDays is not define, therefore the process of finding the birthdays could not happen since there is nothing to find.
+
+   d. How can you make the program display full month names, such as 
+'January' instead of 'Jan'?
+
+         easiest way if to change MONTHS[Jan] to MONTHS[JAN] or change the whole lists
+         
+   e. How could you make 'X simulations run...' appear every 1,000 simula
+tions instead of every 10,000?
+
+         in this code, i change it into modulus 10, so out of 100, it should be 10 steps
