@@ -8,7 +8,7 @@ A deductive logic game where you must guess a number based on clues.
 import random
 
 num_digits = 3
-max_guesses = 3
+max_guesses = int(input("How many guesses would you like? "))
 
 def main():
     print("Welcome to the guessing game! Try to guess the {}-digit in {} tries".format(num_digits, max_guesses))
