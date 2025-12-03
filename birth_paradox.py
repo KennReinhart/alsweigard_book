@@ -1,6 +1,8 @@
 #math, simulation
 import datetime, random
 
+from collections import Counter
+
 def getBirthdays(numberOfBirthdays):
     """Returns a list of number random date objects for birthdays."""
     birthdays = []
@@ -20,6 +22,9 @@ def getMatch(birthdays):
         seen.add(b)
     return None
 
+def getAllMatches(birthdays):
+    counts = Counter(birthdays)
+    return {day: c for day, c in counts.items() if c > 1}
 #Display the intro:
 print('''Birthday Paradox, by AL Sweigart''')
 
@@ -45,34 +50,22 @@ for i, birthday in enumerate(birthdays):
 print("\n")
 
 # Determine if there are two birthdays that match
-match = getMatch(birthdays)
+# match = getMatch(birthdays)
+# # Display the results:
+# print('In this simulation, ', end='')
+# if match:
+#     month = MONTHS[match.month - 1]
+#     print(f"{count(match.day)} people have a birthday on {month} {match.day}")
+# else:
+#     print('There are no matching birthdays')
 
-# Display the results:
-print('In this simulation, ', end='')
-if match:
-    month = MONTHS[match.month - 1]
-    print(f"Multiple people have a birthday on {month} {match.day}")
+matches = getAllMatches(birthdays)
+if matches:
+    print()
+    for day, count in matches.items():
+        month = MONTHS[day.month - 1]
+        print(f"  {count} people have a birthday on {month} {day.day}")
+        probability = count / len(birthdays)
+        print(f" it was {probability * 100:.2f}% of the time")
 else:
     print('There are no matching birthdays')
-print()
-
-# Run through 100 simulations
-print('Generating', numBDays, 'random dates')
-input('Press enter to begin..')
-
-print('Lets run another simulation')
-simMatch = 0
-SIMS = 100_000
-
-for i in range (SIMS):
-    if i % 10_000 == 0:
-        print(i, 'simulations run...')
-    if getMatch(birthdays = getBirthdays(numBDays)):
-        simMatch += 1
-# Display simulation results:
-probability = simMatch / SIMS * 100
-
-print("\n100,000 simulations complete.")
-print(f"Out of {SIMS} simulations of groups of {numBDays} people:")
-print(f"- {simMatch} had matching birthdays.")
-print(f"- Estimated probability: {probability:.2f}%")
