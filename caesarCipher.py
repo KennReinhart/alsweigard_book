@@ -3,7 +3,6 @@
 #ex, if key is 3, then A is D, B becomes E, etc
 
 #to be added in cyberSec project
-
 try:
     import pyperclip
 except ImportError:
