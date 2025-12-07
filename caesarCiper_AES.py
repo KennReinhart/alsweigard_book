@@ -83,10 +83,8 @@ def inv_shift_rows(state):
         state[12], state[9], state[6], state[3]
     ]
 
-
 def xtime(a):
     return ((a << 1) ^ 0x1B) & 0xFF if a & 0x80 else (a << 1)
-
 
 def mix_columns(state):
     result = []
@@ -100,7 +98,6 @@ def mix_columns(state):
         ])
     return result
 
-
 def inv_mix_columns(state):
     result = []
     for i in range(0, 16, 4):
@@ -112,7 +109,6 @@ def inv_mix_columns(state):
             mul(0x0B, a[0]) ^ mul(0x0D, a[1]) ^ mul(0x09, a[2]) ^ mul(0x0E, a[3]),
         ])
     return result
-
 
 def mul(a, b):
     p = 0
@@ -126,14 +122,12 @@ def mul(a, b):
         b >>= 1
     return p
 
-
 # ----------------------
 # KEY EXPANSION
 # ----------------------
 
 def rotate(word):
     return word[1:] + word[:1]
-
 
 def key_expansion(key):
     key_symbols = list(key)
@@ -151,7 +145,6 @@ def key_expansion(key):
             temp[j] ^= expanded[(i - 4) * 4 + j]
         expanded.extend(temp)
     return expanded
-
 
 # ----------------------
 # BLOCK ENCRYPTION
@@ -174,7 +167,6 @@ def encrypt_block(block, expanded_key):
 
     return state
 
-
 def decrypt_block(block, expanded_key):
     state = list(block)
 
@@ -192,10 +184,8 @@ def decrypt_block(block, expanded_key):
 
     return state
 
-
 def add_round_key(state, round_key):
     return [s ^ k for s, k in zip(state, round_key)]
-
 
 # ----------------------
 # PADDING
@@ -205,11 +195,9 @@ def pad(data):
     pad_len = 16 - (len(data) % 16)
     return data + bytes([pad_len] * pad_len)
 
-
 def unpad(data):
     pad_len = data[-1]
     return data[:-pad_len]
-
 
 # ----------------------
 # USER-FRIENDLY API
@@ -225,7 +213,6 @@ def aes_encrypt(key: bytes, plaintext: str) -> bytes:
         encrypted.extend(encrypt_block(list(b), expanded))
 
     return bytes(encrypted)
-
 
 def aes_decrypt(key: bytes, ciphertext: bytes) -> str:
     expanded = key_expansion(key)
