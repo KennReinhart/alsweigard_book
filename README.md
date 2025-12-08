@@ -1,61 +1,18 @@
-This is where i answers the given questions from the projects
+The projects
 
 1. Guessing game (practice with constants)
-   
-   a. What happens when you change the NUM_DIGITS constant?
-   
-        The number of digits would increases or decreases, initial number was 3.
-   
-   b. What happens when you change the MAX_GUESSES constant?
-   
-        The number of tries to guess the correct number would increase or decrease.
-   
-   c. What happens if you set NUM_DIGITS to a number larger than 10?
-   
-         List index out of range.
-   
-   d. What happens if you replace secretNum = getSecretNum() on line 30 with secretNum = '123'?
-   
-        The correct number will always be '123'
-   
-   e. What error message do you get if you delete or comment out numGuesses = 1 on line 34?
-   
-        "cannot access local variable 'numGuesses' since its not define first. By declaring numGuesses as 1 for starter, then loop until numGuesses reaches 3 times with numGuesses += 1 at the end of the 'while loop'
-   
-   f. What happens if you delete or comment out random.shuffle(numbers) on line 62?
-   
-        The correct number would always be the first 3 digit of the initial list of numbers (numbers = list('012...')
-   
-   g. What happens if you delete or comment out if guess == secretNum: on line 74 and return 'You got it!' on line 75?
-
-         The program would not tell if you guess it right, it would straight to go to prompt do you want to play again or not.
-   
-   h. What happens if you comment out numGuesses += 1 on line 44?
-   
-        We will stuck until we guess the right digits
-
-2. Birthday Paradox, math simulation
-   
-   a. How are birthdays represented in this program?
-   
-         We define birthdays 1st January of 1994 in this program
-   
-   b. How could you remove the maximum limit of 100 birthdays the pro
-gram generates?
-
-         in the logic (for i in range(numbers)), numbers could be set 100 or less and more
-
-   c. What error message do you get if you delete or comment out numBDays = 
-int(response)
-
-         numBDays is not define, therefore the process of finding the birthdays could not happen since there is nothing to find.
-
-   d. How can you make the program display full month names, such as 
-'January' instead of 'Jan'?
-
-         easiest way if to change MONTHS[Jan] to MONTHS[JAN] or change the whole lists
-         
-   e. How could you make 'X simulations run...' appear every 1,000 simula
-tions instead of every 10,000?
-
-         in this code, i change it into modulus 10, so out of 100, it should be 10 steps
+   - I made it impossible to guess because the low probability and less clues
+2. Birthday Paradox (math, simulation)
+   - Shows every matched birthdays with visualization with matplotlib
+3. Bitmap
+   - 2D image with entered message, no changes from the original
+4. Blackjack
+   - Changed the chr in the constants
+   - ALL-IN function added
+   - Fixed the "busted" logic, if busted at first then automatically lose
+5. DVD Logo
+   - Can't use the original since im using python 3.13.
+   - Vibe code it, now it works in the terminal
+6. Caesar Cipher (ancient encryption)
+   - tried it, it works by moving 3 steps
+   - Upgraded it into AES (caesar_AES)
