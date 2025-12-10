@@ -116,3 +116,5 @@ def generateJobAutomatedHeadline():
 if __name__ == '__main__':
     main()
 
+#look at the pattern
+#then modify the logic, either simplify it or add new logic
