@@ -16,3 +16,21 @@ The projects
 6. Caesar Cipher (ancient encryption)
    - tried it, it works by moving 3 steps
    - Upgraded it into AES (caesar_AES)
+7. Calendar
+   - Using the datetime module and the timedelta data type
+8. Cho-Han
+   - Practice using random numbers and dictionary data structures
+9. Clickbait headline generator
+   - Practice string manipulation and text generation
+10. Collatz sequencec
+   - learn about the modulus operator
+11. Countdown
+   - Practice importing modules
+12. Diamonds
+   - Practice pattern recognition skills to create drawing algorithms
+13. Factor finder
+   - Use the modulus operator and pythons math module
+14. Fast draw
+   - Learn about the keyboard buffer
+15. Fibonacci
+   - Implement a rudimentary mathematics algorithm
