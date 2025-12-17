@@ -34,3 +34,21 @@ The projects
    - Learn about the keyboard buffer
 15. Fibonacci
    - Implement a rudimentary mathematics algorithm
+16. Gen_clickbait
+   - Just the usual
+17. Guess the number
+   - Just the usual
+18. Gullible
+   - Infinite loop, until break
+19. Multiplication Table
+   - using range in a for loop
+20. Numeral counter
+   - Just the usual
+21. Periodic Table
+   - Just the usual, added tqdm progress bar on load and when searching data
+22. Progress Bar
+   - Using random as progress bar
+23. Rubber room
+   - true infinite loop
+24. Sequence Collatz
+   - Just the usual
